@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PREETHA SIVAKUMAR</title>
+        
+    </head>
+    <style>
+        body{
+            background-image: url(backgroundimg1.jpg);
+            background-repeat: no-repeat;
+            background-size: auto 2300px;
+        }
+        
+        .button{
+            color: #fbfcfd;
+            padding: 10px 25px;
+            background: transparent;
+            border: 1px solid #fff;
+            border-radius: 20px;
+            outline: none;
+            cursor: pointer;
+            display: inline-block;
+            margin: 4px 2px;
+            align-items: right;          
+            text-align: center;
+            
+        }
+        #bt{
+            background-color: #ddd;
+            border: none;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+             margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 16px;
+            float: right;
+            width: 100px;
+        }
+        .greet {
+            position: relative;
+            font-weight: 1000;
+             font-size: 3.3em;
+             color:whitesmoke;
+             text-align:center;
+         }
+
+         .greet .text-wrapper {
+            position: relative;
+             display: inline-block;
+             padding-top: 0.2em;
+              padding-right: 0.05em;
+              padding-bottom: 0.1em;
+              overflow: hidden;
+        }
+
+        .greet .letter {
+            display: inline-block;
+            line-height: 1em;
+            
+
+        }
+        .idrops img{
+           width: 200px;
+           animation: circ 7s linear infinite; 
+        }
+
+        @keyframes circ{
+            0%{
+                transform: translateY(0);
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+            }
+            70%{
+                opacity: 1;
+            }
+            100%{
+                transform: translateY(80vh);
+                opacity: 0;
+            }
+        }
+        .idrops img:nth-child(1){
+            animation-delay: 2s;
+        }
+        .idrops img:nth-child(2){
+            animation-delay: 0s;
+        }
+        .idrops img:nth-child(3){
+            animation-delay: 4s;
+        }
+        .idrops img:nth-child(4){
+            animation-delay: 1s;
+        }
+        .idrops img:nth-child(5){
+            animation-delay: 3s;
+        }
+        .idrops img:nth-child(6){
+            animation-delay: 0s;
+        }
+        .idrops img:nth-child(7){
+            animation-delay: 2s;
+        }
+    </style>
+<body>
+   <div>
+       
+       <h1 class="greet">
+        <span class="text-wrapper">
+          <span class="letters">Annyeong Chingu!!</span>
+        </span>
+        <a href="home.html"><button id="bt" type="button" >ENTER</button>
+        
+      </h1>
+      <div class="idrops">
+          <img src="JH1.png">
+          <img src="JK1.png">
+          <img src="RM1.png">
+          <img src="KT1.png">
+          <img src="JM1.png">
+          <img src="KS1.png">
+          <img src="YG1.png">
+      </div>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+      <script>
+      // Wrap every letter in a span
+var textWrapper = document.querySelector('.greet .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.greet .letter',
+    translateY: ["1.1em", 0],
+    translateZ: 0,
+    duration: 750,
+    delay: (el, i) => 50 * i
+  }).add({
+    targets: '.greet',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+  </script>
+   </div>
+</body>
+</html>
